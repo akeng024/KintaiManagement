@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="ja"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{commons/header}">
 <head>
-    <meta charset="UTF-8">
-    <title>Stamp</title>
+    <title>打刻</title>
 </head>
 <body>
-<h3>打刻</h3>
+<div layout:fragment="contents">
+    めいん
+    <h3>打刻</h3>
     <form th:action="@{/logout}" method="post">
         <button type="submit">ログアウト</button>
     </form>
-<!--
-<a th:href="@{/logout}">
-    <button type="button">Logout</button>
-</a>
--->
+</div>
 </body>
 </html>
