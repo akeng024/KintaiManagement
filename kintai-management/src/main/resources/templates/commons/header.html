@@ -5,12 +5,20 @@
       layout:decorate="~{commons/layout}">
 <head>
     <meta charset="UTF-8">
-    <title>Header Title</title>
+    <title></title>
 </head>
 <body>
 <div layout:fragment="header">
     <div id="header">
-        へっだー
+        <div><p>ろご</p></div>
+        <div>打刻</div>
+        <div>打刻修正</div>
+        <div>勤務表</div>
+        <div>
+            <form th:action="@{/logout}" method="post">
+                <button type="submit">ログアウト</button>
+            </form>
+        </div>
     </div>
 </div>
 </body>
