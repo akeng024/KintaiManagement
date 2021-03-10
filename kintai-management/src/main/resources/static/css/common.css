@@ -1,0 +1,18 @@
+body {
+    font-size: .75rem;
+}
+
+/*
+ * header
+ */
+#header div {
+    float: left;
+    background-color: #dddfdf;
+}
+
+/*
+ * footer
+ */
+[role="footer"] {
+    background-color: #dddfdf;
+}

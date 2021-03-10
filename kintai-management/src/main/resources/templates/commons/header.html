@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{commons/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div layout:fragment="header">
+    <div id="header">
+        <div><p>ろご</p></div>
+        <div>打刻</div>
+        <div>打刻修正</div>
+        <div>勤務表</div>
+        <div>
+            <form th:action="@{/logout}" method="post">
+                <button type="submit">ログアウト</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
