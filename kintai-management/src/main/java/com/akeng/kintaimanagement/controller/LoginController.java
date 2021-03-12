@@ -23,8 +23,8 @@ public class LoginController {
         return "login";
     }
 
-    @GetMapping("/stamp")
-    public String stamp(LoginForm form){
-        return "stamp";
+    @GetMapping("/punch")
+    public String punch(LoginForm form){
+        return "punch";
     }
 }
