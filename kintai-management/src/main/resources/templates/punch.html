@@ -10,6 +10,12 @@
 <body>
 <div layout:fragment="contents">
     <p id="clock"></p>
+    <form th:action="@{/punch-in}" method="post">
+        <button type="submit">出勤</button>
+    </form>
+    <form th:action="@{/punch-out}" method="post">
+        <button  type="submit">退勤</button>
+    </form>
 </div>
 </body>
 </html>
