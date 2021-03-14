@@ -22,9 +22,4 @@ public class LoginController {
         model.addAttribute("form", new LoginForm());
         return "login";
     }
-
-    @GetMapping("/punch")
-    public String punch(LoginForm form){
-        return "punch";
-    }
 }

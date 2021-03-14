@@ -11,9 +11,17 @@
 <div layout:fragment="header">
     <div id="header">
         <div><p>ろご</p></div>
-        <div>打刻</div>
+        <div>
+            <form th:action="@{/punch}" method="get">
+                <button type="submit">打刻</button>
+            </form>
+        </div>
         <div>打刻修正</div>
-        <div>勤務表</div>
+        <div>
+            <form th:action="@{/roster}" method="get">
+                <button type="submit">勤務表</button>
+            </form>
+        </div>
         <div>
             <form th:action="@{/logout}" method="post">
                 <button type="submit">ログアウト</button>

@@ -9,6 +9,6 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Repository
-public interface PunchRepository extends JpaRepository<DailyRoster, Long> {
+public interface RosterRepository extends JpaRepository<DailyRoster, Long> {
     Optional<DailyRoster> findByPunchDate(LocalDate today);
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{commons/header}">
+<head>
+    <title>勤務表</title>
+    <script type="text/javascript" th:src="@{/js/punch.js}"></script>
+</head>
+<body>
+<div layout:fragment="contents">
+    <form th:action="@{/punch-in}" method="get">
+    <table>
+        <tr>
+            <th>日</th>
+            <th>曜日</th>
+            <th>出勤時刻</th>
+            <th>退勤時刻</th>
+            <th>特記事項</th>
+            <th>勤務時間</th>
+            <th>休憩時間</th>
+            <th>残業時間</th>
+        </tr>
+        <tr th:each="data : ${dataList}">
+            <td th:text="${data.punchDate}"></td>
+            <td></td>
+            <td th:text="${data.punchInTime}"></td>
+            <td th:text="${data.punchOutTime}"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    </form>
+</div>
+</body>
+</html>
