@@ -3,16 +3,15 @@ body {
 }
 
 /*
- * header
- */
-#header div {
-    float: left;
-    background-color: #dddfdf;
-}
-
-/*
  * footer
  */
 [role="footer"] {
     background-color: #dddfdf;
+}
+
+/*
+ * login
+ */
+#login {
+
 }

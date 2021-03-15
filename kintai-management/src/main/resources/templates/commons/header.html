@@ -9,25 +9,35 @@
 </head>
 <body>
 <div layout:fragment="header">
-    <div id="header">
-        <div><p>ろご</p></div>
-        <div>
-            <form th:action="@{/punch}" method="get">
-                <button type="submit">打刻</button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="">ろご</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/punch}">打刻</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">打刻修正</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/roster}">勤務表</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/login}">Logout</a>
+                </li>
+            </ul>
+            <!--
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
+            -->
         </div>
-        <div>打刻修正</div>
-        <div>
-            <form th:action="@{/roster}" method="get">
-                <button type="submit">勤務表</button>
-            </form>
-        </div>
-        <div>
-            <form th:action="@{/logout}" method="post">
-                <button type="submit">ログアウト</button>
-            </form>
-        </div>
-    </div>
+    </nav>
 </div>
 </body>
 </html>

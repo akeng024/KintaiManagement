@@ -21,15 +21,15 @@
             <th>休憩時間</th>
             <th>残業時間</th>
         </tr>
-        <tr th:each="data : ${dataList}">
-            <td th:text="${data.punchDate}"></td>
-            <td></td>
-            <td th:text="${data.punchInTime}"></td>
-            <td th:text="${data.punchOutTime}"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+        <tr th:each="row : ${rosterList}">
+            <td th:text="${row.day}"></td>
+            <td th:text="${row.dayOfTheWeek}"></td>
+            <td th:text="${row.punchInTime}"></td>
+            <td th:text="${row.punchOutTime}"></td>
+            <td th:text="${row.notices}"></td>
+            <td th:text="${row.workingHours}"></td>
+            <td th:text="${row.breakHours}"></td>
+            <td th:text="${row.overtimeHours}"></td>
         </tr>
     </table>
     </form>

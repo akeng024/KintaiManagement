@@ -1,7 +1,9 @@
 package com.akeng.kintaimanagement.controller;
 
+import com.akeng.kintaimanagement.auth.LoginUser;
 import com.akeng.kintaimanagement.service.RosterService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,8 +14,8 @@ public class RosterController {
     RosterService rosterService;
 
     @GetMapping("/roster")
-    public String index(Model model){
-        model.addAttribute("dataList", rosterService.getAll());
+    public String index(Model model, @AuthenticationPrincipal LoginUser loginUser){
+        model.addAttribute("rosterList", rosterService.getAll(loginUser.getUser().getId()));
         return "roster";
     }
 }
