@@ -1,17 +1,10 @@
 body {
-    font-size: .75rem;
-}
-
-/*
- * footer
- */
-[role="footer"] {
-    background-color: #dddfdf;
+    font-size: .75rem !important;
 }
 
 /*
  * login
  */
-#login {
-
+#login-form {
+    margin-top: 20%;
 }
