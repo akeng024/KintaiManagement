@@ -13,14 +13,18 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Slf4j
-public class SimpleLoginUser extends org.springframework.security.core.userdetails.User {
+public class LoginUser extends org.springframework.security.core.userdetails.User {
     @Getter
     private User user;
 
-    public SimpleLoginUser(User user) {
+    public LoginUser(User user) {
         super(user.getEmail(), user.getPassword(), user.getEnable(), true, true,
                 true, convertGrantedAuthorities(user.getRole()));
         this.user = user;
+    }
+
+    public Long getUserId() {
+        return user.getId();
     }
 
     static Set<GrantedAuthority> convertGrantedAuthorities(String role) {

@@ -1,18 +1,45 @@
 body {
-    font-size: .75rem;
+    font-size: .75rem !important;
+    color: #343a40 !important;
 }
 
 /*
  * header
  */
-#header div {
-    float: left;
-    background-color: #dddfdf;
+.logout {
+    float: right;
 }
 
 /*
- * footer
+ * login
  */
-[role="footer"] {
-    background-color: #dddfdf;
+#login-form {
+    margin-top: 20%;
 }
+
+/*
+ * punch
+ */
+#punch-btn {
+    display: inline-flex;
+}
+
+#clock {
+    font-size: 40px;
+    font-weight: 100;
+    margin-top: 15%;
+}
+
+/*
+ * roster
+ */
+.table {
+    width: 60% !important;
+    margin: 0 auto;
+}
+
+.table th, .table td {
+    border-top: 1px solid #343a40 !important;
+    border-bottom: 1px solid #343a40 !important;
+}
+

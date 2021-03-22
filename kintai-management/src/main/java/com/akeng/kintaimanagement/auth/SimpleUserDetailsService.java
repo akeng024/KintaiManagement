@@ -22,7 +22,7 @@ public class SimpleUserDetailsService implements UserDetailsService {
         assert(email != null);
         log.debug("loadUserByUsername(email):[{}]", email);
         return userRepository.findByEmail(email)
-                .map(SimpleLoginUser::new)
+                .map(LoginUser::new)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found by email:[" + email + "]"));
     }
 }

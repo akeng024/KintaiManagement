@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{commons/header}">
+<head>
+    <title th:text="#{title.punch}"></title>
+    <script type="text/javascript" th:src="@{/js/punch.js}"></script>
+</head>
+<body>
+<div layout:fragment="contents">
+    <div class="text-center">
+        <p id="clock"></p>
+        <div id="punch-btn">
+            <form th:action="@{/punch-in}" method="post">
+                <button type="submit" class="btn btn-sm btn-outline-dark mr-2">In</button>
+            </form>
+            <form th:action="@{/punch-out}" method="post">
+                <button type="submit" class="btn btn-sm btn-outline-dark">Out</button>
+            </form>
+        </div>
+    </div>
+    <form th:action="@{/set-days}" method="post">
+        <button type="submit" class="btn btn-sm btn-outline-light">SetDays</button>
+    </form>
+    <form th:action="@{/set-months}" method="post">
+        <button type="submit" class="btn btn-sm btn-outline-light">SetMonths</button>
+    </form>
+</div>
+</body>
+</html>

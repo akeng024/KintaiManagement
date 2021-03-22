@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{commons/header}">
+<head>
+    <title th:text="#{title.roster}"></title>
+    <script type="text/javascript" th:src="@{/js/punch.js}"></script>
+</head>
+<body>
+<div layout:fragment="contents">
+    <form th:action="@{/punch-in}" method="get">
+        <div class="mt-5">年月</div>
+        <table class="table table-sm text-center">
+            <thead>
+            <tr>
+                <th>労働時間</th>
+                <th>残業時間</th>
+                <th>出勤日数</th>
+                <th>欠勤日数</th>
+                <th>有給取得日数</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td th:text="${monthlies.totalWorkingHours}"></td>
+                <td th:text="${monthlies.totalOvertimeHours}"></td>
+                <td th:text="${monthlies.totalWorkingDays}"></td>
+                <td th:text="${monthlies.absenceDays}"></td>
+                <td th:text="${monthlies.paidAcquisitionDays}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-hover text-center mb-5">
+            <thead>
+            <tr>
+                <th>日</th>
+                <th>曜日</th>
+                <th>出勤時刻</th>
+                <th>退勤時刻</th>
+                <th>労働時間</th>
+                <th>休憩時間</th>
+                <th>残業時間</th>
+                <th>勤怠状況</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="row : ${dailies}">
+                <td th:text="${row.day}"></td>
+                <td th:text="${row.dayOfTheWeek}"></td>
+                <td th:text="${row.punchInTime}"></td>
+                <td th:text="${row.punchOutTime}"></td>
+                <td th:text="${row.workingHours}"></td>
+                <td th:text="${row.breakHours}"></td>
+                <td th:text="${row.overtimeHours}"></td>
+                <td th:text="${row.workStatus}"></td>
+            </tr>
+            <!--
+            <tr>
+                <td colspan="2">合計</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            -->
+            </tbody>
+        </table>
+    </form>
+</div>
+</body>
+</html>

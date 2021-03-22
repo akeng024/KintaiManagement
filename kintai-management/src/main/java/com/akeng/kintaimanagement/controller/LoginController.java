@@ -22,9 +22,4 @@ public class LoginController {
         model.addAttribute("form", new LoginForm());
         return "login";
     }
-
-    @GetMapping("/stamp")
-    public String stamp(LoginForm form){
-        return "stamp";
-    }
 }
