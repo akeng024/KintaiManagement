@@ -4,24 +4,28 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{commons/header}">
 <head>
-    <title>打刻</title>
+    <title th:text="#{title.punch}"></title>
     <script type="text/javascript" th:src="@{/js/punch.js}"></script>
 </head>
 <body>
 <div layout:fragment="contents">
-    <p id="clock"></p>
-    <div id="punch-btn">
-        <div class="pr-2">
+    <div class="text-center">
+        <p id="clock"></p>
+        <div id="punch-btn">
             <form th:action="@{/punch-in}" method="post">
-                <button type="submit" class="btn btn-sm btn-outline-secondary">In</button>
+                <button type="submit" class="btn btn-sm btn-outline-dark mr-2">In</button>
             </form>
-        </div>
-        <div class="">
             <form th:action="@{/punch-out}" method="post">
-                <button type="submit" class="btn btn-sm btn-outline-secondary">Out</button>
+                <button type="submit" class="btn btn-sm btn-outline-dark">Out</button>
             </form>
         </div>
     </div>
+    <form th:action="@{/set-days}" method="post">
+        <button type="submit" class="btn btn-sm btn-outline-light">SetDays</button>
+    </form>
+    <form th:action="@{/set-months}" method="post">
+        <button type="submit" class="btn btn-sm btn-outline-light">SetMonths</button>
+    </form>
 </div>
 </body>
 </html>

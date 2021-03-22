@@ -1,6 +1,13 @@
 body {
     font-size: .75rem !important;
-    color: #6c757d !important;
+    color: #343a40 !important;
+}
+
+/*
+ * header
+ */
+.logout {
+    float: right;
 }
 
 /*
@@ -13,11 +20,26 @@ body {
 /*
  * punch
  */
-#punch-btn div {
-    float: left;
+#punch-btn {
+    display: inline-flex;
 }
 
 #clock {
     font-size: 40px;
-    color: #181819;
+    font-weight: 100;
+    margin-top: 15%;
 }
+
+/*
+ * roster
+ */
+.table {
+    width: 60% !important;
+    margin: 0 auto;
+}
+
+.table th, .table td {
+    border-top: 1px solid #343a40 !important;
+    border-bottom: 1px solid #343a40 !important;
+}
+

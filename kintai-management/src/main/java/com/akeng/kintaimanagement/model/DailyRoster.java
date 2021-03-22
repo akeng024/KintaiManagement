@@ -16,10 +16,11 @@ public class DailyRoster {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long userId;
-    private LocalDate punchDate;
+    private LocalDate date;
     private LocalTime punchInTime;
     private LocalTime punchOutTime;
-    private String workingHours;
-    private String breakHours;
-    private String overtimeHours;
+    private long workingHours;
+    private long breakHours;
+    private long overtimeHours;
+    private String workStatus;
 }

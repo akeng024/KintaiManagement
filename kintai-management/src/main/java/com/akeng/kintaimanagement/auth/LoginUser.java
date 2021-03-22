@@ -23,6 +23,10 @@ public class LoginUser extends org.springframework.security.core.userdetails.Use
         this.user = user;
     }
 
+    public Long getUserId() {
+        return user.getId();
+    }
+
     static Set<GrantedAuthority> convertGrantedAuthorities(String role) {
         if (StringUtils.isEmpty(role)) {
             return Collections.emptySet();

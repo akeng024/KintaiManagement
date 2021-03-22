@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.time.LocalDateTime;
+
 @Controller
 public class RosterController {
     @Autowired
@@ -15,7 +17,9 @@ public class RosterController {
 
     @GetMapping("/roster")
     public String index(Model model, @AuthenticationPrincipal LoginUser loginUser){
-        model.addAttribute("rosterList", rosterService.getAll(loginUser.getUser().getId()));
+        var today = LocalDateTime.now();
+        model.addAttribute("monthlies", rosterService.getMonthlies(today, loginUser.getUserId()));
+        model.addAttribute("dailies", rosterService.getDailies(today, loginUser.getUser().getId()));
         return "roster";
     }
 }
