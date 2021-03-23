@@ -1,16 +1,13 @@
 package com.akeng.kintaimanagement.controller;
 
 import com.akeng.kintaimanagement.form.LoginForm;
-import com.akeng.kintaimanagement.service.AccountService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class LoginController {
-    @Autowired
-    AccountService accountService;
 
     @GetMapping("/")
     public String index() {
@@ -21,5 +18,10 @@ public class LoginController {
     public String login(Model model){
         model.addAttribute("form", new LoginForm());
         return "login";
+    }
+
+    @PostMapping("/loginCheck")
+    public String login() {
+        return "forward:/login";
     }
 }
